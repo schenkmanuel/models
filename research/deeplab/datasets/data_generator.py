@@ -99,10 +99,21 @@ _ADE20K_INFORMATION = DatasetDescriptor(
     ignore_label=0,
 )
 
+_OUTSTICKING_MANHOLES = DatasetDescriptor(
+    splits_to_sizes={
+        'train': 70,  # num of samples in train.txt
+        'val': 20,  # num of samples in val.txt
+        'test': 10,
+    },
+    num_classes=3, # classes+bg+ignore_label
+    ignore_label=255,
+)
+
 _DATASETS_INFORMATION = {
     'cityscapes': _CITYSCAPES_INFORMATION,
     'pascal_voc_seg': _PASCAL_VOC_SEG_INFORMATION,
     'ade20k': _ADE20K_INFORMATION,
+    'outsticking_manholes': _OUTSTICKING_MANHOLES # own dataset
 }
 
 # Default file pattern of TFRecord of TensorFlow Example.
